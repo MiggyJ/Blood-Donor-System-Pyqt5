@@ -52,7 +52,7 @@ class Database():
 		self.cur.execute(sql)
 		result = self.cur.fetchall()
 		return result
-
+	# Async-like search
 	def lookFor(self, keyword, fromList, column, type):
 		searchBy = ''
 		if fromList == 'Donation':
@@ -134,7 +134,7 @@ class Database():
 		res = self.cur.fetchall()
 		return res
 
-		# ADD NEW DONOR
+	# ADD NEW DONOR
 	def addDonor(self, name, address, contactNumber, birth):
 		sql = "INSERT INTO DONOR (name, Address, ContactNumber, dateofbirth) VALUES (%s, %s, %s, %s)"
 		val = (name, address, contactNumber, birth)
